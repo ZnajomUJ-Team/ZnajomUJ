@@ -10,3 +10,4 @@ class Participant:
     preferred_age_min: int
     preferred_age_max: int
     other_faculty_only: bool
+    answers: tuple[str, ...] = ()
