@@ -56,3 +56,12 @@ TBD.
 ## License
 
 TBD.
+
+## Templates and static files
+
+- Project-wide templates live in `templates/` (`base.html`, `partials/`).
+  App-specific templates live in `<app>/templates/<app>/`.
+- Every page extends `base.html`. Available blocks: `title`, `extra_head`, `content`, `extra_js`.
+- Static files live in `static/` (site styles in `static/css/site.css`). Use `{% static %}` in templates.
+- Bootstrap 5 and HTMX are loaded from a CDN.
+- Brand colours are CSS variables at the top of `static/css/site.css`.
