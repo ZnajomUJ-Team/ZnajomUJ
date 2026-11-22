@@ -1,11 +1,13 @@
 /* Site styles, loaded after Bootstrap. */
 
 :root {
-  /* Placeholder palette. Replace with the palette chosen for the logo. */
+  /* Placeholder palette. Palette chosen from first logo template */
   --zn-primary: #25236B;
   --zn-primary-rgb: 37, 35, 107;
   --zn-primary-dark: #1A1850;
-  --zn-accent: #D96A00;
+    --zn-accent: #EE4B3A;
+  --zn-accent-light: #FE6B5B;
+  --zn-accent-text: #C73A2A;
   --zn-bg: #F4F4F9;
   --zn-text: #1F2330;
 
@@ -72,4 +74,13 @@ img {
 .site-footer {
   background-color: #E9EAF3;
   color: var(--zn-text);
+}
+
+/* "UJ" in the brand name is highlighted like in the logo. */
+.navbar-brand {
+  font-weight: 800;
+}
+
+.navbar-brand .brand-uj {
+  color: var(--zn-accent-light);
 }
