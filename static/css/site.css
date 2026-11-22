@@ -1,0 +1,75 @@
+/* Site styles, loaded after Bootstrap. */
+
+:root {
+  /* Placeholder palette. Replace with the palette chosen for the logo. */
+  --zn-primary: #25236B;
+  --zn-primary-rgb: 37, 35, 107;
+  --zn-primary-dark: #1A1850;
+  --zn-accent: #D96A00;
+  --zn-bg: #F4F4F9;
+  --zn-text: #1F2330;
+
+  --bs-primary: var(--zn-primary);
+  --bs-primary-rgb: var(--zn-primary-rgb);
+  --bs-link-color: var(--zn-primary);
+  --bs-link-color-rgb: var(--zn-primary-rgb);
+  --bs-link-hover-color: var(--zn-primary-dark);
+  --bs-link-hover-color-rgb: 26, 24, 80;
+  --bs-body-color: var(--zn-text);
+  --bs-body-bg: var(--zn-bg);
+}
+
+.bg-zn-primary {
+  background-color: var(--zn-primary) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--zn-primary);
+  --bs-btn-border-color: var(--zn-primary);
+  --bs-btn-hover-bg: var(--zn-primary-dark);
+  --bs-btn-hover-border-color: var(--zn-primary-dark);
+  --bs-btn-active-bg: var(--zn-primary-dark);
+  --bs-btn-active-border-color: var(--zn-primary-dark);
+  --bs-btn-disabled-bg: var(--zn-primary);
+  --bs-btn-disabled-border-color: var(--zn-primary);
+  --bs-btn-focus-shadow-rgb: 37, 35, 107;
+}
+
+/* Touch targets of at least 44 px (mobile first). */
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-link {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Visible keyboard focus. */
+:focus-visible {
+  outline: 3px solid var(--zn-accent);
+  outline-offset: 2px;
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1030;
+  padding: 0.5rem 1rem;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-footer {
+  background-color: #E9EAF3;
+  color: var(--zn-text);
+}
