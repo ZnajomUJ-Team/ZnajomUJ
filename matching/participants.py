@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass(frozen=True)
 class Participant:
@@ -10,4 +10,4 @@ class Participant:
     preferred_age_min: int
     preferred_age_max: int
     other_faculty_only: bool
-    answers: tuple[str, ...] = ()
+    answers: dict[str, str] = field(default_factory=dict, hash=False)
