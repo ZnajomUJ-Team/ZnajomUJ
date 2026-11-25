@@ -29,7 +29,7 @@ def select_pairs(scored_pairs):
 
 
 def match(participants, scorer, scorer_name=None):
-        """Match participants into pairs.
+    """Match participants into pairs.
 
     participants: list of Participant
     scorer: function (participants, pairs) -> list of Pair, one per pair,
