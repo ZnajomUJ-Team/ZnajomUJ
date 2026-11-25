@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from itertools import combinations
+import networkx as nx
 
 @dataclass(frozen=True)
 class Pair:
@@ -47,11 +48,19 @@ def allowed_pairs(participants):
 
 
 def select_pairs(scored_pairs):
-    """Choose pairs so that the sum of their scores is as high as possible.
+    """Choose pairs: first as many participants as possible, then the highest sum of scores.
 
     Returns a list of Pair objects. Each participant appears in at most one pair.
     """
-    raise NotImplementedError
+    G = nx.Graph()
+    for pair in scored_pairs:
+        G.add_edge(pair.a_id, pair.b_id, weight=pair.score)
+    matching = nx.max_weight_matching(G, maxcardinality=True)
+    chosen = []
+    for u, v in matching:
+        score = G[u][v]["weight"]
+        chosen.append(Pair(a_id=min(u, v), b_id=max(u, v), score=score))
+    return chosen
 
 
 def match(participants, scorer, scorer_name=None):
