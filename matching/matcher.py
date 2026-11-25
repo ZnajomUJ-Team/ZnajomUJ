@@ -29,15 +29,17 @@ def select_pairs(scored_pairs):
 
 
 def match(participants, scorer, scorer_name=None):
-    """Match participants into pairs.
+        """Match participants into pairs.
 
     participants: list of Participant
-    scorer: function (participants, pairs) -> list of floats from 0 to 1,
-        one score per pair, in the same order as pairs.
+    scorer: function (participants, pairs) -> list of Pair, one per pair,
+        each with a score from 0 to 1. pairs are (a_id, b_id) tuples
+        that passed the hard filter.
         It is provided from outside (random scorer in tests, language model later).
     scorer_name: text describing the scorer, e.g. model name and revision
 
-    Returns MatchResult with the chosen pairs and the ids of unmatched participants.
+    Returns MatchResult with the chosen pairs, the ids of unmatched participants
+    and the names of the scorer and the algorithm used.
     """
     if scorer_name is None: 
         scorer_name = scorer.__name__
