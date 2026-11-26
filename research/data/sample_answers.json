@@ -1,0 +1,43 @@
+{
+  "description": "Proste przykłady do przetestowania środowiska",
+  "questions": [
+    {
+      "id": "free_time",
+      "text": "Jak najchętniej spędzasz wolny czas?",
+      "answers": [
+        {
+          "id": "answer_1",
+          "text": "Najchętniej chodzę ze znajomymi po górach."
+        },
+        {
+          "id": "answer_2",
+          "text": "Lubię wypady na szlaki w towarzystwie przyjaciół."
+        },
+        {
+          "id": "answer_3",
+          "text": "Najbardziej lubię samotne wieczory z książką"
+        },
+        {
+          "id": "answer_4",
+          "text": "Nie lubię chodzić po górach, wolę spotkania w kawiarni."
+        },
+        {
+          "id": "answer_5",
+          "text": "Biegam se czasami"
+        },
+        {
+          "id": "answer_6",
+          "text": "Nie mam czasu wolnego"
+        },
+        {
+          "id": "answer_7",
+          "text": "Najchętniej nie chodzę ze znajomymi po górach."
+        },
+        {
+          "id": "answer_8",
+          "text": "Praca praca praca"
+        }
+      ]
+    }
+  ]
+}
