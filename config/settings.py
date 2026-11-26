@@ -121,3 +121,25 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+
+# E-mail
+# Domyślnie (lokalnie) wiadomości nie są wysyłane, tylko wypisywane w konsoli.
+# Na serwerze produkcyjnym ustawiamy w .env EMAIL_BACKEND na backend SMTP
+# oraz dane serwera pocztowego. Hasła nie wpisujemy w kodzie (NF-05).
+
+EMAIL_BACKEND = env(
+    "EMAIL_BACKEND",
+    default="django.core.mail.backends.console.EmailBackend",
+)
+EMAIL_HOST = env("EMAIL_HOST", default="")
+EMAIL_PORT = env.int("EMAIL_PORT", default=587)
+EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=True)
+DEFAULT_FROM_EMAIL = env(
+    "DEFAULT_FROM_EMAIL",
+    default="ZnajomUJ <noreply@znajomuj.local>",
+)
