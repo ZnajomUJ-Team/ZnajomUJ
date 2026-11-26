@@ -85,13 +85,9 @@ DATABASES = {
 # Musi być ustawiony przed pierwszą migracją projektu.
 AUTH_USER_MODEL = "accounts.User"
 
-# Hasła haszujemy algorytmem Argon2 (NF-01). Pozostałe algorytmy zostają na liście tylko po to,
-# żeby dało się zweryfikować ewentualne hasła zapisane wcześniej innym algorytmem.
+# Hasła haszujemy algorytmem Argon2 (NF-01).
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
-    "django.contrib.auth.hashers.ScryptPasswordHasher",
 ]
 
 
