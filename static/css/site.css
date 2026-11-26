@@ -1,0 +1,93 @@
+/* Site styles, loaded after Bootstrap. */
+
+:root {
+  /* Palette from logo variant 9 (indigo and violet). */
+  --zn-primary: #1E1B4A;
+  --zn-primary-rgb: 30, 27, 74;
+  --zn-primary-dark: #151338;
+  --zn-primary-dark-rgb: 21, 19, 56;
+  --zn-accent: #7B3AEC;        /* violet, 5.2:1 on the page background */
+  --zn-accent-light: #A78BFA;  /* for dark backgrounds, 5.9:1 on indigo */
+  --zn-accent-text: #7B3AEC;   /* for text on light backgrounds */
+  --zn-bg: #F4F2FE;
+  --zn-surface: #E9E6F8;
+  --zn-text: #1F2330;
+
+  --bs-primary: var(--zn-primary);
+  --bs-primary-rgb: var(--zn-primary-rgb);
+  --bs-link-color: var(--zn-primary);
+  --bs-link-color-rgb: var(--zn-primary-rgb);
+  --bs-link-hover-color: var(--zn-primary-dark);
+  --bs-link-hover-color-rgb: var(--zn-primary-dark-rgb);
+  --bs-body-color: var(--zn-text);
+  --bs-body-bg: var(--zn-bg);
+}
+
+.bg-zn-primary {
+  background-color: var(--zn-primary) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--zn-primary);
+  --bs-btn-border-color: var(--zn-primary);
+  --bs-btn-hover-bg: var(--zn-primary-dark);
+  --bs-btn-hover-border-color: var(--zn-primary-dark);
+  --bs-btn-active-bg: var(--zn-primary-dark);
+  --bs-btn-active-border-color: var(--zn-primary-dark);
+  --bs-btn-disabled-bg: var(--zn-primary);
+  --bs-btn-disabled-border-color: var(--zn-primary);
+  --bs-btn-focus-shadow-rgb: 30, 27, 74;
+}
+
+/* Touch targets of at least 44 px (mobile first). */
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-link {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Visible keyboard focus: violet on light, light violet on the dark navbar. */
+:focus-visible {
+  outline: 3px solid var(--zn-accent);
+  outline-offset: 2px;
+}
+
+.navbar :focus-visible {
+  outline-color: var(--zn-accent-light);
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1030;
+  padding: 0.5rem 1rem;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-footer {
+  background-color: var(--zn-surface);
+  color: var(--zn-text);
+}
+
+/* "UJ" in the brand name is highlighted like in the logo. */
+.navbar-brand {
+  font-family: "Nunito", system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.navbar-brand .brand-uj {
+  color: var(--zn-accent-light);
+}
