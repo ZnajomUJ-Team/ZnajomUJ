@@ -44,7 +44,26 @@ docker compose down
 
 ## Tests
 
-TBD.
+```sh
+docker compose exec web python manage.py test
+```
+
+## Accounts
+
+- The project uses a custom user model, `accounts.User` (`AUTH_USER_MODEL`). Always refer to it with
+  `get_user_model()` or `settings.AUTH_USER_MODEL`, never `django.contrib.auth.models.User`.
+- Users log in with their e-mail address (case-insensitive); there is no username.
+- Passwords are hashed with Argon2.
+- New accounts are inactive until the e-mail address is confirmed (T14). Superusers are active.
+- `createsuperuser` asks for an e-mail address instead of a username.
+
+If you ran `migrate` before the custom user model was added, reset your local database once:
+
+```sh
+docker compose down -v
+docker compose up -d --build
+docker compose exec web python manage.py migrate
+```
 
 ## Authors
 
